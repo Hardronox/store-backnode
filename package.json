@@ -8,7 +8,9 @@
     "test": "jest"
   },
   "dependencies": {
-    "express": "^4.16.2"
+    "express": "^4.16.2",
+    "mocha": "^5.0.5",
+    "mongoose": "^5.0.11"
   },
   "devDependencies": {},
   "author": "",
