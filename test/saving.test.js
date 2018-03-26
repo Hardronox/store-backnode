@@ -3,10 +3,10 @@ const User = require('../models/user')
 
 
 
-describe('saving records', function () {
-
-
-  it('saves new user',function (done) {
+// describe('saving records', function () {
+//
+//
+//   it('saves new user',function (done) {
 
     var user = new User({
       firstName: 'String',
@@ -17,7 +17,7 @@ describe('saving records', function () {
 
     user.save().then(function () {
       assert(user.isNew === false);
-      done();
+      // done();
     });
-  })
-});
+//   })
+// });
