@@ -15,6 +15,9 @@ describe('saving records', function () {
       password: 'String',
     });
 
-    user.save();
+    user.save().then(function () {
+      assert(user.isNew === false);
+      done();
+    });
   })
 });
