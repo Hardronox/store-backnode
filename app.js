@@ -1,15 +1,12 @@
-var express = require('express');
+const express = require('express');
+const routes = require('./routes');
+const bodyParser = require('body-parser');
 
-var app = express();
+const app = express();
 
+app.use(bodyParser.json());
 
-app.get('/kek', function (req, res) {
-  res.send('kek');
-});
-
-app.get('/kek/:id', function (req, res) {
-  res.send('kek'+req.params.id);
-});
+app.use('/api', routes);
 
 
 app.listen(3001);
