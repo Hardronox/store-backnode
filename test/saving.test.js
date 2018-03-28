@@ -19,5 +19,15 @@ const User = require('../models/user')
       assert(user.isNew === false);
       // done();
     });
+
+    User.find('Chuck');
+    User.findOne({name: 'Chuck'}).then(function (result) {
+      console.log('kek');
+    });
+    User.findOne({_id: user._id}).then(function (result) {
+
+      // toString() result._id
+      console.log('kek');
+    });
 //   })
 // });
