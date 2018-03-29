@@ -8,5 +8,9 @@ app.use(bodyParser.json());
 
 app.use('/api', routes);
 
+app.use(function (err, req, res, next) {
+  res.status(500).send({error: err.message});
+});
+
 
 app.listen(3001);
