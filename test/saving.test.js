@@ -15,7 +15,8 @@ const User = require('../models/user')
       password: 'String',
       available: {
         type: Boolean,
-        default: false
+        default: false,
+        coordinates: [Number] // arr of numb
       }
     });
 
@@ -32,7 +33,17 @@ const User = require('../models/user')
     User.findOneAndRemove({name: 'Chuck'}).then(function (result) {
       console.log('kek');
     });
+    User.update({}, {$inc: {weight: 1}}).then(function (result) {
+      console.log('kek');
+    });
+    User.findByIdAndRemove({_id: id}).then(function (result) {
+      res.send(result);
+      console.log('kek');
+    });
     User.findOneAndUpdate({name: 'Chuck'},{name: 'Chsdfuck'}).then(function (result) {
+      console.log('kek');
+    });
+    User.findByIdAndUpdate({name: 'Chuck'},{name: 'Chsdfuck'}, {new: true}).then(function (result) {
       console.log('kek');
     });
     User.findOne({_id: user._id}).then(function (result) {
