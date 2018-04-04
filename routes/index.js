@@ -8,11 +8,16 @@ const router = express.Router();
 const {index, show, store, destroy, update} = UsersController;
 
 router.get('/users', function (req, res, next) {
-  index();
+  index(req, res, next);
+});
+
+router.post('/register', function (req, res, next) {
+  store(req, res, next);
 });
 
 router.route('/user')
   .get(function(req, res) {
+    // ? req.query parseInt
     show(req, res);
   })
   .post(function(req, res) {
